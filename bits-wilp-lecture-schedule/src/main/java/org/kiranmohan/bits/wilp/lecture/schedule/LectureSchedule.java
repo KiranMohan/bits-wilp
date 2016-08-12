@@ -28,7 +28,7 @@ public class LectureSchedule {
 	private static final String HTTPS_PROXY_HOST_KEY = "https_proxyHost";
 	private static final String HTTPS_PROXY_PORT_KEY = "https_proxyPort";
 	
-	private static final String DEFAUL_URL = "http://vu.bits-pilani.ac.in/onlineLecture/LectSchedule.htm";
+	private static final String DEFAULT_URL = "http://vu.bits-pilani.ac.in/onlineLecture/LectSchedule.htm";
 	
 	private String url = null;
 	private CleanupScheduleHTML parseAndCleanup = null;
@@ -76,7 +76,7 @@ public class LectureSchedule {
 	private void readSystemPreferences() {
 		Preferences systemNode;
 		systemNode = Preferences.systemRoot().node(PREFS_BASE_NODE);
-		url = systemNode.get(PREFS_URL_KEY, DEFAUL_URL);
+		url = systemNode.get(PREFS_URL_KEY, DEFAULT_URL);
 		Preferences skipPatternsNode = systemNode.node(PREFS_SKIP_PATTERN_NODE);
 		try {
 			for(String key : skipPatternsNode.keys()) {
