@@ -97,7 +97,15 @@ public class LectureSchedule {
 		Preferences searchReplaceNode = Preferences.userRoot().node(PREFS_BASE_NODE + "/" + PREFS_SEARCH_REPLACE_NODE);
 		try {
 			for(String key: searchReplaceNode.keys()) {
-				searchReplaceMap.put(key, searchReplaceNode.get(key,key));
+				String origKey = key;
+				if (!key.matches("^\\.\\*.*")) {
+					key = ".*"+key;
+				} 
+				if (!key.matches(".*\\.\\*$")) {
+					key = key + ".*";
+				}
+				//System.out.println("key : " + key);
+				searchReplaceMap.put(key, searchReplaceNode.get(origKey,origKey));
 			}
 		} catch (BackingStoreException e) {
 			// TODO Auto-generated catch block

@@ -15,10 +15,10 @@
 				<map>
 					<!-- This search uses regular expressions. Use "\s*"  
 						for a space character that may or may not occur. -->
-					<entry key="SS\s*ZG513" value="Network Security" />
-					<entry key="SS\s*ZG526" value="Distributed Computing" />
-					<entry key="SS\s*ZG527" value="Cloud Computing" />
-					<entry key="SS\s*ZG582" value="Telecom Network Management" />
+					<entry key="SS ZG518.*" value="DB Design and Applications" />
+					<entry key=".*SS ZG514" value="OOAD" />
+					<entry key="SS ZG513" value="Network Security" />
+					<entry key="CS ZG525" value="Adv. Computer Networks" />
 				</map>
 			</node>
 		</node>

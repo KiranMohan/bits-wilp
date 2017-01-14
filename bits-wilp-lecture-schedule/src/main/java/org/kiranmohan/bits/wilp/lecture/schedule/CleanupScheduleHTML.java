@@ -122,10 +122,12 @@ public class CleanupScheduleHTML {
 								                .filter(e -> text.matches(e.getKey()))
 								                .findFirst()			// find the key
 								                .orElse(cleanUpEntry);	// or return a key that will cleanup the cell
-		                
-		String newHtml = cell.html()
-							 .replaceAll(key.getKey(), key.getValue());
-		cell.html(newHtml);
+				
+		if (key.equals(cleanUpEntry)) {
+			cell.html("");
+		} else {
+			cell.append("<br>" + key.getValue());
+		}
 						
 	}
 	
